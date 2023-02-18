@@ -1,0 +1,16 @@
+:root {
+    --snow: #fafafa;
+    --adriatic: #006994;
+}
+
+body {
+    margin: 0;
+    width: 100vw;
+    height: 100vh;
+    font-family: 'Work Sans';
+    font-size: 22px;
+}
+
+button {
+    border: none;
+}

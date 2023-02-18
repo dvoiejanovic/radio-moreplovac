@@ -1,0 +1,26 @@
+.app {
+  background-color: var(--snow);
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.headline {
+  font-size: 100px;
+  font-weight: bolder;
+}
+
+.button {
+  background-color: var(--adriatic);
+  color: white;
+  font-size: 32px;
+  padding: 16px;
+  border-radius: 8px;
+  cursor: pointer;
+
+  &:hover {
+    background-color: black;
+  }
+}
