@@ -11,13 +11,14 @@ const Redirect = () => {
   useEffect(() => {
     if (code) {
       const fetchToken = async () => {
-        await requestAccessToken(code, redirect_uri);
-
-        if (localStorage.getItem('token')) {
+        const accessTokenData = await requestAccessToken(code, redirect_uri);
+        debugger;
+        if (accessTokenData) {
+          localStorage.setItem('token', accessTokenData.access_token);
           navigate('/home');
+        } else {
+          navigate('/');
         }
-
-        navigate('/');
       }
 
       fetchToken();

@@ -1,0 +1,36 @@
+.sidebar {
+  background-color: var(--black);
+  width: 240px;
+  height: 100vh;
+  padding-top: 24px;
+}
+
+.item {
+  padding: 0 16px;
+  color: var(--silver);
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  height: 40px;
+  font-size: 16px;
+  margin-bottom: 8px;
+  cursor: pointer;
+
+  &:hover {
+    color: white;
+  }
+}
+
+.icon {
+  color: inherit;
+  font-size: 24px;
+}
+
+.logo_container {
+  padding-left: 16px;
+  margin-bottom: 16px;
+}
+
+.logo {
+  height: 40px;
+}

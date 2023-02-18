@@ -1,8 +1,10 @@
+import Sidebar from "../components/Sidebar/Sidebar";
+
 const Home = () => {
   return (
-    <div>
-      You've logged in!
-    </div>
+    <main>
+      <Sidebar />
+    </main>
   )
 }
 

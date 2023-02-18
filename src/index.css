@@ -1,6 +1,10 @@
 :root {
     --snow: #fafafa;
     --adriatic: #006994;
+    --black: #000;
+    --white: #fff;
+    --silver: #b3b3b3;
+    --eerie-black: #181818;
 }
 
 body {
@@ -9,6 +13,7 @@ body {
     height: 100vh;
     font-family: 'Work Sans';
     font-size: 22px;
+    background-color: var(--eerie-black);
 }
 
 button {

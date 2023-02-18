@@ -21,7 +21,7 @@ export function authorize() {
   window.location.href = authorizeUrl;
 }
 
-export async function requestAccessToken(code: string, redirect_uri: string) {
+export async function requestAccessToken(code: string, redirect_uri: string): Promise<IAccessTokenResponse | undefined> {
   const url = `${baseUrl}/api/token`;
   const encodedClientInfo = btoa(`${client_id}:${client_secret}`);
 
@@ -32,19 +32,22 @@ export async function requestAccessToken(code: string, redirect_uri: string) {
   }
 
   try {
-    await fetch(url, {
+    const accessTokenData = await fetch(url, {
       method: 'POST',
       body: new URLSearchParams(data),
       headers: {
         Authorization: `Basic ${encodedClientInfo}`,
-        'Content-Tyspe': 'application/x-www-form-urlencoded'
+        'Content-Type': 'application/x-www-form-urlencoded'
       },
     })
     .then((response) => response.json())
-    .then((response: IAccessTokenResponse) => {
-      localStorage.setItem('token', response.access_token);
+    .then((data: IAccessTokenResponse) => {
+      return data;
     });
+
+    return accessTokenData;
   } catch {
     console.error('Unable to request access token.')
+    return;
   }
 }
