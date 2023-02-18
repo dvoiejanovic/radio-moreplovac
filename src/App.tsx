@@ -1,4 +1,4 @@
-import {authorize} from './services/authorization'
+import {authorize} from './services/spotify'
 import styles from './app.module.scss';
 
 

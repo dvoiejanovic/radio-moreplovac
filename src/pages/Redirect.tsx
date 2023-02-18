@@ -1,6 +1,6 @@
 import {useEffect} from "react";
 import {useNavigate} from "react-router-dom";
-import {requestAccessToken} from "../services/authorization";
+import {requestAccessToken} from "../services/spotify";
 
 const Redirect = () => {
   const params = new URLSearchParams(window.location.search);
@@ -10,20 +10,19 @@ const Redirect = () => {
 
   useEffect(() => {
     if (code) {
-      requestAccessToken(code, redirect_uri);
+      const fetchToken = async () => {
+        await requestAccessToken(code, redirect_uri);
+
+        if (localStorage.getItem('token')) {
+          navigate('/home');
+        }
+
+        navigate('/');
+      }
+
+      fetchToken();
     }
   }, []);
-
-  useEffect(() => {
-    let redirectTimeout = setTimeout(() => {
-      debugger;
-      navigate('/home');
-    }, 100000)
-
-    return () => {
-      clearTimeout(redirectTimeout)
-    }
-  });
 
   return (
     <div>
