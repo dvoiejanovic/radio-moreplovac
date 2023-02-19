@@ -6,7 +6,7 @@ import {
   createBrowserRouter,
   RouterProvider,
 } from "react-router-dom";
-import Home from './pages/Home';
+import Home from './pages/Home/Home';
 import Redirect from './pages/Redirect';
 
 const router = createBrowserRouter([

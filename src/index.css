@@ -9,6 +9,7 @@
 
 body {
     margin: 0;
+    color: var(--white);
     width: 100vw;
     height: 100vh;
     font-family: 'Work Sans';
