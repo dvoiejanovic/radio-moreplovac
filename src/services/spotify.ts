@@ -1,6 +1,7 @@
 const client_id = 'e236bc35cc7f4e798afc340769206ad4';
 const client_secret = '7e161270372447f4a779cd63c027f287';
-const baseUrl = 'https://accounts.spotify.com';
+const accountsBaseUrl = 'https://accounts.spotify.com';
+const apiBaseUrl = 'https://api.spotify.com/v1';
 
 interface IAccessTokenResponse {
   access_token: string,
@@ -10,19 +11,30 @@ interface IAccessTokenResponse {
   scope?: string,
 }
 
+interface IUserProfile {
+  display_name: string
+  images: IImage[]
+}
+
+interface IImage {
+  height?: number
+  width?: number
+  url: string
+}
+
 export function authorize() {
   const params = new URLSearchParams({
     response_type: 'code',
     client_id: client_id,
     redirect_uri: 'http://127.0.0.1:5173/redirect'
   });
-  const authorizeUrl = `${baseUrl}/authorize?` + params;
+  const authorizeUrl = `${accountsBaseUrl}/authorize?` + params;
 
   window.location.href = authorizeUrl;
 }
 
 export async function requestAccessToken(code: string, redirect_uri: string): Promise<IAccessTokenResponse | undefined> {
-  const url = `${baseUrl}/api/token`;
+  const url = `${accountsBaseUrl}/api/token`;
   const encodedClientInfo = btoa(`${client_id}:${client_secret}`);
 
   const data = {
@@ -41,13 +53,27 @@ export async function requestAccessToken(code: string, redirect_uri: string): Pr
       },
     })
     .then((response) => response.json())
-    .then((data: IAccessTokenResponse) => {
-      return data;
-    });
+    .then((data: IAccessTokenResponse) => data);
 
     return accessTokenData;
   } catch {
     console.error('Unable to request access token.')
     return;
   }
+}
+
+// Spotify API
+
+export async function getUserProfile() {
+  const userProfile = await fetch(`${apiBaseUrl}/me`, {
+    method: 'GET',
+    headers: {
+      Authorization: `Bearer ${localStorage.getItem('token')}`,
+      'Content-Type': 'application/json'
+    }
+  })
+  .then((response) => response.json())
+  .then((data: IUserProfile) => data);
+
+  return userProfile;
 }

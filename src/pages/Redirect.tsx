@@ -15,7 +15,7 @@ const Redirect = () => {
         debugger;
         if (accessTokenData) {
           localStorage.setItem('token', accessTokenData.access_token);
-          navigate('/home');
+          navigate('/');
         } else {
           navigate('/');
         }

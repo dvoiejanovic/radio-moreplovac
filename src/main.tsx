@@ -1,4 +1,3 @@
-import React from 'react'
 import ReactDOM from 'react-dom/client'
 import App from './App'
 import './index.css'
@@ -8,14 +7,24 @@ import {
 } from "react-router-dom";
 import Home from './pages/Home/Home';
 import Redirect from './pages/Redirect';
+import Search from './pages/Search/Search';
+import Layout from './pages/Layout/Layout';
 
 const router = createBrowserRouter([
   {
-    path: '/',
+    path: '/login',
     element: <App />
   }, {
-    path: '/home',
-    element: <Home />
+    element: <Layout />,
+    children: [
+      {
+        path: '/search',
+        element: <Search/>
+      }, {
+        path: '/',
+        element: <Home />
+      }
+    ]
   }, {
     path: '/redirect',
     element: <Redirect />

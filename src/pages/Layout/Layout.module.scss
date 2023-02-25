@@ -1,0 +1,9 @@
+.layout {
+  display: grid;
+  grid-template-areas: "sidebar top-area"
+    "sidebar main-area";
+  grid-template-columns: auto 1fr;
+  grid-template-rows: auto 1fr;
+  height: 100%;
+  min-height: 100%;
+}
