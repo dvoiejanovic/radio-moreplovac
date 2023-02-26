@@ -12,7 +12,6 @@ const Redirect = () => {
     if (code) {
       const fetchToken = async () => {
         const accessTokenData = await requestAccessToken(code, redirect_uri);
-        debugger;
         if (accessTokenData) {
           localStorage.setItem('token', accessTokenData.access_token);
           navigate('/');

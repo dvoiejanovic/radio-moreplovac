@@ -1,13 +1,18 @@
 import styles from './Header.module.scss';
 import UserBadge from '../UserBadge/UserBadge';
+import {IUserProfile} from '../../services/spotify';
 
-const Header = () => {
+interface IHeaderProps {
+  userProfile: IUserProfile
+}
+
+const Header = (props: IHeaderProps) => {
   return (
     <header className={styles.header}>
       <div>
         // TODO: Navigation buttons
       </div>
-      <UserBadge />
+      <UserBadge userProfile={props.userProfile} />
     </header>
   )
 }

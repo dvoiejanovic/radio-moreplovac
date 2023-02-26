@@ -11,7 +11,7 @@ interface IAccessTokenResponse {
   scope?: string,
 }
 
-interface IUserProfile {
+export interface IUserProfile {
   display_name: string
   images: IImage[]
 }
