@@ -1,0 +1,33 @@
+.card {
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
+  background-color: var(--eerie-black);
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+  padding: 16px;
+
+  &:hover {
+    background-color: var(--dire-wolf);
+  }
+}
+
+.image {
+  height: 100px;
+  border-radius: inherit;
+}
+
+.title {
+  font-size: 1rem;
+  color: var(--text-base);
+}
+
+.description {
+  font-size: 0.875rem;
+  color: var(--text-subdued);
+}
+
+.image_wrapper {
+  border-radius: 50%;
+}

@@ -6,6 +6,10 @@
     --silver: #b3b3b3;
     --eerie-black: #181818;
     --dire-wolf: #282828;
+    --dark-tone-ink: #121212;
+
+    --text-subdued: #a7a7a7;
+    --text-base : #fff;
 }
 
 body {
@@ -15,7 +19,7 @@ body {
     height: 100vh;
     font-family: 'Work Sans';
     font-size: 22px;
-    background-color: var(--eerie-black);
+    background-color: var(--dark-tone-ink);
 }
 
 button {

@@ -1,4 +1,6 @@
 import {useEffect, useState} from "react";
+import Card from "../../components/Card/Card";
+import CardGrid from "../../components/CardGrid/CardGrid";
 import {getUserTopArtists, ITopArtist} from "../../services/spotify";
 import styles from './Home.module.scss';
 
@@ -16,11 +18,13 @@ const Home = () => {
 
   return (
     <main className={styles.home}>
-      {topArtists.map((artist) =>
-        <div key={artist.id}>
-          {artist.name}
-        </div>)
-      }
+      <CardGrid>
+        {
+          topArtists.map((artist) => (
+            <Card key={artist.id} title={artist.name} description="artist" imageUrl={artist.images[0].url} />
+          ))
+        }
+      </CardGrid>
     </main>
   )
 }
