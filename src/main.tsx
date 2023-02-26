@@ -9,6 +9,7 @@ import Home from './pages/Home/Home';
 import Redirect from './pages/Redirect';
 import Search from './pages/Search/Search';
 import Layout from './pages/Layout/Layout';
+import Settings from './pages/Settings';
 
 const router = createBrowserRouter([
   {
@@ -20,6 +21,9 @@ const router = createBrowserRouter([
       {
         path: '/search',
         element: <Search/>
+      }, {
+        path: '/settings',
+        element: <Settings />
       }, {
         path: '/',
         element: <Home />

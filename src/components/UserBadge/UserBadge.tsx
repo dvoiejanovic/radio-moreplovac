@@ -34,7 +34,13 @@ const UserBadge = (props: IUserBadgeProps) => {
 
   const logout = () => {
     localStorage.removeItem('token');
+    setIsOpen(false);
     navigate('/login');
+  }
+
+  const goToSettings = () => {
+    setIsOpen(false);
+    navigate('/settings');
   }
 
   return (
@@ -55,6 +61,13 @@ const UserBadge = (props: IUserBadgeProps) => {
 
       {isOpen &&
         <div className={styles.menu}>
+          <button
+            className={styles.menu_button}
+            type="button"
+            onClick={goToSettings}
+          >
+            Settings
+          </button>
           <button
             className={styles.menu_button}
             type="button"
