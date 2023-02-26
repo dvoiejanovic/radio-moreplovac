@@ -1,18 +1,19 @@
-import {authorize} from './services/spotify'
-import styles from './app.module.scss';
+
+import {authorize} from '../../services/spotify'
+import styles from './styles.module.scss';
 
 
 function App() {
   return (
-    <div className={styles.app}>
+    <main className={styles.splash}>
       <div className={styles.headline}>
         Radio Moreplovac
       </div>
       <button className={styles.button} type="button" onClick={authorize}>
         Login
       </button>
-    </div>
+    </main>
   )
 }
 
-export default App
+export default App;

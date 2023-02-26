@@ -1,5 +1,4 @@
 import ReactDOM from 'react-dom/client'
-import App from './App'
 import './index.css'
 import {
   createBrowserRouter,
@@ -10,11 +9,12 @@ import Redirect from './pages/Redirect';
 import Search from './pages/Search/Search';
 import Layout from './pages/Layout/Layout';
 import Settings from './pages/Settings';
+import Splash from './pages/Splash';
 
 const router = createBrowserRouter([
   {
     path: '/login',
-    element: <App />
+    element: <Splash />
   }, {
     element: <Layout />,
     children: [
