@@ -4,5 +4,23 @@
   justify-content: space-between;
   grid-area: top-area;
   height: 64px;
-  padding: 0 16px;
+  padding: 8px 16px 0;
+}
+
+.nav_button {
+  border-radius: 50%;
+  height: 32px;
+  width: 32px;
+  background-color: var(--black);
+  cursor: pointer;
+  opacity: 0.6;
+  padding: 2px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.nav_button_wrapper {
+  display: flex;
+  gap: 8px;
 }
