@@ -16,6 +16,21 @@ export interface IUserProfile {
   images: IImage[]
 }
 
+export interface ITopArtist {
+  genres: string[]
+  href: string
+  id: string
+  images: IImage[]
+  name: string
+  popularity: number
+  type: string
+  uri: string
+}
+
+interface ITopArtistsReponse {
+  items: ITopArtist[]
+}
+
 interface IImage {
   height?: number
   width?: number
@@ -26,7 +41,8 @@ export function authorize() {
   const params = new URLSearchParams({
     response_type: 'code',
     client_id: client_id,
-    redirect_uri: 'http://127.0.0.1:5173/redirect'
+    redirect_uri: 'http://127.0.0.1:5173/redirect',
+    scope: 'user-top-read user-read-recently-played'
   });
   const authorizeUrl = `${accountsBaseUrl}/authorize?` + params;
 
@@ -76,4 +92,18 @@ export async function getUserProfile() {
   .then((data: IUserProfile) => data);
 
   return userProfile;
+}
+
+export async function getUserTopArtists() {
+  const topArtists = await fetch(`${apiBaseUrl}/me/top/artists`, {
+    method: 'GET',
+    headers: {
+      Authorization: `Bearer ${localStorage.getItem('token')}`,
+      'Content-Type': 'application/json'
+    }
+  })
+  .then((response) => response.json())
+  .then((data: ITopArtistsReponse) => data);
+
+  return topArtists.items;
 }
