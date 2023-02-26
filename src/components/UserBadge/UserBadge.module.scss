@@ -33,12 +33,25 @@
   background-color: var(--dire-wolf);
   border-radius: 4px;
   position: absolute;
-  top: 40px;
+  top: 64px;
   right: 0;
   font-size: 12px;
-  min-height: 64px;
   min-width: 120px;
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+.menu_button {
+  cursor: pointer;
+  width: 100%;
+  border-radius: 2px;
+  height: 40px;
+  padding: 12px;
+  text-align: start;
+  box-sizing: border-box;
+
+  &:hover {
+    background-color: hsla(0,0%,100%,.1);
+  }
 }
