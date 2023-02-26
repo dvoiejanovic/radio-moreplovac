@@ -5,7 +5,7 @@ import {useEffect, useRef, useState} from "react";
 import {useNavigate} from "react-router-dom";
 
 interface IUserBadgeProps {
-  userProfile: IUserProfile
+  userProfile?: IUserProfile
 }
 
 const UserBadge = (props: IUserBadgeProps) => {

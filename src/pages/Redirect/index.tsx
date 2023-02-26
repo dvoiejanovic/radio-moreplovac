@@ -1,6 +1,9 @@
+
 import {useEffect} from "react";
+import {AiOutlineLoading3Quarters} from "react-icons/ai";
 import {useNavigate} from "react-router-dom";
-import {requestAccessToken} from "../services/spotify";
+import {requestAccessToken} from "../../services/spotify";
+import styles from './styles.module.scss';
 
 const Redirect = () => {
   const params = new URLSearchParams(window.location.search);
@@ -16,7 +19,7 @@ const Redirect = () => {
           localStorage.setItem('token', accessTokenData.access_token);
           navigate('/');
         } else {
-          navigate('/');
+          navigate('/login');
         }
       }
 
@@ -25,9 +28,12 @@ const Redirect = () => {
   }, []);
 
   return (
-    <div>
-      You will be redirected to home in a moment ...
-    </div>
+    <main className={styles.redirect_screen}>
+      <div className={styles.message}>
+        You will be redirected to Radio Moreplovac in a moment.
+        <AiOutlineLoading3Quarters />
+      </div>
+    </main>
   )
 }
 

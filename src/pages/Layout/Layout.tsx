@@ -6,11 +6,7 @@ import {getUserProfile, IUserProfile} from "../../services/spotify";
 import styles from "./Layout.module.scss";
 
 
-interface ILayoutProps {
-  children?: ReactNode
-}
-
-const Layout = (props?: ILayoutProps) => {
+const Layout = () => {
   const token = localStorage.getItem('token');
   const navigate = useNavigate();
   const [userProfile, setUserProfile] = useState<IUserProfile>();
@@ -34,7 +30,7 @@ const Layout = (props?: ILayoutProps) => {
     <div className={styles.layout}>
       <Header userProfile={userProfile} />
       <Sidebar />
-      <main>
+      <main className={styles.layout_body}>
         <Outlet />
       </main>
     </div>

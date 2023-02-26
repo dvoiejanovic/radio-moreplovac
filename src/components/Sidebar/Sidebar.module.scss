@@ -31,8 +31,17 @@
 .logo_container {
   padding-left: 16px;
   margin-bottom: 16px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
 }
 
 .logo {
-  height: 40px;
+  font-size: 40px;
+}
+
+.title {
+  text-transform: uppercase;
+  font-size: 16px;
+  font-weight: bolder;
 }

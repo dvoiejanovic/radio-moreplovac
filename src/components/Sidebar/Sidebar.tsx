@@ -1,8 +1,8 @@
 import styles from './Sidebar.module.scss';
 import { AiOutlineHome } from "react-icons/ai";
 import { AiOutlineSearch } from "react-icons/ai";
-import SpotifyLogo from "../../assets/spotify-logo.png";
 import {useNavigate} from 'react-router-dom';
+import {GiPaperBoat} from "react-icons/gi";
 
 const Sidebar = () => {
   const navigate = useNavigate();
@@ -10,7 +10,11 @@ const Sidebar = () => {
   return (
     <aside className={styles.sidebar}>
       <div className={styles.logo_container}>
-        <img className={styles.logo} src={SpotifyLogo} alt="" />
+        <GiPaperBoat className={styles.logo} />
+        <div className={styles.title}>
+          Radio <br/>
+          Moreplovac
+        </div>
       </div>
       <button
         className={styles.item}

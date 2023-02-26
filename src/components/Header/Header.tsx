@@ -4,7 +4,7 @@ import {IUserProfile} from '../../services/spotify';
 import {AiOutlineLeft, AiOutlineRight} from 'react-icons/ai';
 
 interface IHeaderProps {
-  userProfile: IUserProfile
+  userProfile?: IUserProfile
 }
 
 const Header = (props: IHeaderProps) => {
