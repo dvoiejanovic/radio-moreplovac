@@ -3,7 +3,7 @@
   flex-direction: column;
   cursor: pointer;
   background-color: var(--eerie-black);
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
   gap: 16px;
   padding: 16px;
@@ -13,17 +13,31 @@
   }
 }
 
+.text_section {
+  align-self: flex-start;
+  padding-left: 16px;
+  justify-self: flex-end;
+}
+
 .image {
   height: 100px;
+  width: 100px;
+  border-radius: 50%;
 }
 
 .title {
   font-size: 1rem;
   color: var(--text-base);
+  margin-bottom: 8px;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  max-width: 140px;
+  white-space: nowrap;
 }
 
 .description {
   font-size: 0.875rem;
+  text-transform: capitalize;
   color: var(--text-subdued);
 }
 

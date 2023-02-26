@@ -13,11 +13,13 @@ export const Card = ({imageUrl, title, description}: ICardProps) => {
       <div className={styles.image_wrapper}>
         <img src={imageUrl} alt="" className={styles.image}/>
       </div>
-      <div className={styles.title}>
-        {title}
-      </div>
-      <div className={styles.description}>
-        {description}
+      <div className={styles.text_section}>
+        <div className={styles.title}>
+          {title}
+        </div>
+        <div className={styles.description}>
+          {description}
+        </div>
       </div>
     </div>
   )
