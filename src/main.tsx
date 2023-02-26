@@ -10,6 +10,7 @@ import Search from './pages/Search/Search';
 import Layout from './pages/Layout/Layout';
 import Settings from './pages/Settings';
 import Splash from './pages/Splash';
+import Artist from './pages/Artist';
 
 const router = createBrowserRouter([
   {
@@ -24,6 +25,9 @@ const router = createBrowserRouter([
       }, {
         path: '/settings',
         element: <Settings />
+      }, {
+        path: '/artist/:id',
+        element: <Artist />
       }, {
         path: '/',
         element: <Home />

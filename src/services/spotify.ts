@@ -81,29 +81,34 @@ export async function requestAccessToken(code: string, redirect_uri: string): Pr
 // Spotify API
 
 export async function getUserProfile() {
-  const userProfile = await fetch(`${apiBaseUrl}/me`, {
-    method: 'GET',
-    headers: {
-      Authorization: `Bearer ${localStorage.getItem('token')}`,
-      'Content-Type': 'application/json'
-    }
-  })
-  .then((response) => response.json())
-  .then((data: IUserProfile) => data);
-
+  const userProfile = await request<IUserProfile>('me');
   return userProfile;
 }
 
 export async function getUserTopArtists() {
-  const topArtists = await fetch(`${apiBaseUrl}/me/top/artists`, {
+  const topArtists = await request<ITopArtistsReponse>('me/top/artists');
+  return topArtists.items;
+}
+
+export async function getArtist(id: string) {
+  const artist = await request<any>('artists', id)
+  return artist;
+}
+
+async function request<TData>(endpoint: string, param?: string, headers?: Record<string, string>) {
+  const staticUrl = `${apiBaseUrl}/${endpoint}`;
+  const apiUrl = param ? `${staticUrl}/${param}` : staticUrl;
+
+  const data = await fetch(apiUrl, {
     method: 'GET',
     headers: {
       Authorization: `Bearer ${localStorage.getItem('token')}`,
-      'Content-Type': 'application/json'
+      'Content-Type': 'application/json',
+      ...headers
     }
   })
   .then((response) => response.json())
-  .then((data: ITopArtistsReponse) => data);
+  .then((data: TData) => data);
 
-  return topArtists.items;
+  return data;
 }
