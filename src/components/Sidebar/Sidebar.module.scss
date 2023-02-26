@@ -1,7 +1,7 @@
 .sidebar {
   background-color: var(--black);
   width: 240px;
-  height: 100vh;
+  height: 100%;
   padding-top: 24px;
   grid-area: sidebar;
 }
@@ -41,7 +41,7 @@
 }
 
 .title {
-  text-transform: uppercase;
+  text-transform: capitalize;
   font-size: 16px;
   font-weight: bolder;
 }

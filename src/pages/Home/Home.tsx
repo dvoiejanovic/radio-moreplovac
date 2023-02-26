@@ -17,7 +17,7 @@ const Home = () => {
   }, [])
 
   return (
-    <main className={styles.home}>
+    <div className={styles.home}>
       <CardGrid>
         {
           topArtists.map((artist) => (
@@ -25,7 +25,7 @@ const Home = () => {
           ))
         }
       </CardGrid>
-    </main>
+    </div>
   )
 }
 

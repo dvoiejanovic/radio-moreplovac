@@ -25,3 +25,7 @@ body {
 button {
     all: unset;
 }
+
+* {
+    box-sizing: border-box;
+}
