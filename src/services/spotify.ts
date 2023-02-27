@@ -37,6 +37,24 @@ interface IImage {
   url: string
 }
 
+export interface IArtist {
+  external_urls: string
+  followers: IFollower
+  genres: string[]
+  href: string
+  id: string
+  images: IImage[]
+  name: string
+  popularity: string
+  type: string
+  uri: string
+}
+
+interface IFollower {
+  href?: string
+  total: number
+}
+
 export function authorize() {
   const params = new URLSearchParams({
     response_type: 'code',
@@ -91,7 +109,7 @@ export async function getUserTopArtists() {
 }
 
 export async function getArtist(id: string) {
-  const artist = await request<any>('artists', id)
+  const artist = await request<IArtist>('artists', id)
   return artist;
 }
 
