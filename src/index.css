@@ -17,7 +17,7 @@ body {
     color: var(--white);
     width: 100vw;
     height: 100vh;
-    font-family: 'Work Sans';
+    font-family: 'Signika', sans-serif;
     font-size: 22px;
     background-color: var(--dark-tone-ink);
 }
