@@ -1,6 +1,6 @@
 
 import {Link} from "react-router-dom";
-import styles from "./Card.module.scss";
+import styles from "./styles.module.scss";
 
 interface ICardProps {
   imageUrl: string

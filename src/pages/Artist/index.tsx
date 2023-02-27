@@ -3,7 +3,7 @@ import {useParams} from 'react-router-dom';
 import WorkInProgress from '../../components/WorkInProgress';
 import {formatNumber} from '../../helpers/format';
 import {getArtist, IArtist} from '../../services/spotify';
-import styles from './Artist.module.scss';
+import styles from './styles.module.scss';
 
 const Artist = () => {
   const params = useParams();

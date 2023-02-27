@@ -1,9 +1,9 @@
 import {ReactNode, useEffect, useState} from "react";
 import {Outlet, useNavigate} from "react-router-dom";
-import Header from "../../components/Header/Header";
-import Sidebar from "../../components/Sidebar/Sidebar";
+import Header from "../../components/Header";
+import Sidebar from "../../components/Sidebar";
 import {getUserProfile, IUserProfile} from "../../services/spotify";
-import styles from "./Layout.module.scss";
+import styles from "./styles.module.scss";
 
 
 const Layout = () => {

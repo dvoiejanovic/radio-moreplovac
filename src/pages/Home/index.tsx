@@ -1,8 +1,8 @@
 import {useEffect, useState} from "react";
-import Card from "../../components/Card/Card";
-import CardGrid from "../../components/CardGrid/CardGrid";
+import Card from "../../components/Card";
+import CardGrid from "../../components/CardGrid";
 import {getUserTopArtists, ITopArtist} from "../../services/spotify";
-import styles from './Home.module.scss';
+import styles from './styles.module.scss';
 
 const Home = () => {
 

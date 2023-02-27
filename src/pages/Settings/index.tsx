@@ -1,7 +1,9 @@
+import WorkInProgress from "../../components/WorkInProgress";
+
 const Settings = () => {
   return (
     <div>
-      Settings
+      <WorkInProgress />
     </div>
   )
 }

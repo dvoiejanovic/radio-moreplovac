@@ -4,10 +4,10 @@ import {
   createBrowserRouter,
   RouterProvider,
 } from "react-router-dom";
-import Home from './pages/Home/Home';
+import Home from './pages/Home';
 import Redirect from './pages/Redirect';
-import Search from './pages/Search/Search';
-import Layout from './pages/Layout/Layout';
+import Search from './pages/Search';
+import Layout from './pages/Layout';
 import Settings from './pages/Settings';
 import Splash from './pages/Splash';
 import Artist from './pages/Artist';
