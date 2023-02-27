@@ -1,5 +1,5 @@
 
-import {authorize} from '../../services/spotify'
+import {authorize} from '~/services/spotify';
 import styles from './styles.module.scss';
 
 

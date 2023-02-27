@@ -1,13 +1,14 @@
 import {useEffect, useState} from 'react';
-import {useParams} from 'react-router-dom';
-import WorkInProgress from '../../components/WorkInProgress';
-import {formatNumber} from '../../helpers/format';
-import {getArtist, IArtist} from '../../services/spotify';
+import {useLocation, useParams} from 'react-router-dom';
+import WorkInProgress from '~/components/WorkInProgress';
+import {formatNumber} from '~/helpers/format';
+import {getArtist, IArtist} from '~/services/spotify';
 import styles from './styles.module.scss';
 
 const Artist = () => {
   const params = useParams();
   const [artist, setArtist] = useState<IArtist>();
+  const { pathname } = useLocation();
 
   useEffect(() => {
     if (params.id) {
@@ -18,6 +19,10 @@ const Artist = () => {
       fetchArtist();
     }
   }, [])
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [pathname]);
 
   return (
     <div className={styles.artist_page}>
