@@ -2,7 +2,7 @@
 import {useEffect} from "react";
 import {AiOutlineLoading3Quarters} from "react-icons/ai";
 import {useNavigate} from "react-router-dom";
-import {requestAccessToken} from "../../services/spotify";
+import {requestAccessToken} from "~/services/spotify";
 import styles from './styles.module.scss';
 
 const Redirect = () => {

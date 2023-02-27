@@ -1,4 +1,4 @@
-import {IUserProfile} from "../../services/spotify";
+import {IUserProfile} from "~/services/spotify";
 import styles from './styles.module.scss';
 import {AiFillCaretDown, AiFillCaretUp} from "react-icons/ai";
 import {useEffect, useRef, useState} from "react";
