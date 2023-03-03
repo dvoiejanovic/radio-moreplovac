@@ -11,4 +11,16 @@ export default defineConfig({
       '~': path.resolve(__dirname, 'src'),
     },
   },
+  css: {
+    preprocessorOptions: {
+      scss: {
+        additionalData (source, fp) {
+          if (fp.endsWith('index.scss')) {
+            return source;
+          }
+          return `@import "~/index.scss"; ${source}`;
+        }
+      }
+    }
+  }
 })
