@@ -1,11 +1,9 @@
 
 .splash {
-  background-color: darkblue;
-  height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  @include flex-center();
   flex-direction: column;
+  background-color: $splash-bg-color;
+  height: 100vh;
 }
 
 .headline {
@@ -14,7 +12,7 @@
 }
 
 .button {
-  background-color: adriatic;
+  background-color: $black;
   color: white;
   font-size: 32px;
   padding: 16px;

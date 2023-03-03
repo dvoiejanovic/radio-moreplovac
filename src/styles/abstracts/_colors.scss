@@ -1,11 +1,22 @@
-$snow: #fafafa;
-$adriatic: #006994;
-$black: #000;
 $white: #fff;
-$silver: #b3b3b3;
+$silver: #a7a7a7;
+$adriatic: #006994;
+$dark-tone-ink: #121212;
 $eerie-black: #181818;
 $dire-wolf: #282828;
-$dark-tone-ink: #121212;
+$black: #000;
 
-$text-subdued: #a7a7a7;
-$text-base : #fff;
+// text variables
+$text-subdued: $silver;
+$text-base : $white;
+
+
+//
+$body-bg-color: $dark-tone-ink;
+$splash-bg-color: $adriatic;
+
+$card-bg-color: $eerie-black;
+$card-hover-bg-color: $dire-wolf;
+
+$nav-button-bg-color: $black;
+

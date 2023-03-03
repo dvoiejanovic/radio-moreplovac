@@ -9,7 +9,7 @@
 .item {
   background-color: black;
   padding: 0 16px;
-  color: silver;
+  color: $text-subdued;
   display: flex;
   align-items: center;
   gap: 16px;
@@ -19,7 +19,7 @@
   cursor: pointer;
 
   &:hover {
-    color: white;
+    color: $text-base;
   }
 }
 

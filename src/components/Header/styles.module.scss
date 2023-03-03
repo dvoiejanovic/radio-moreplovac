@@ -9,13 +9,11 @@
 }
 
 .nav_button {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  @include flex-center();
   border-radius: 50%;
   height: 32px;
   width: 32px;
-  background-color: $black;
+  background-color: $nav-button-bg-color;
   cursor: pointer;
   opacity: 0.6;
   padding: 2px;
