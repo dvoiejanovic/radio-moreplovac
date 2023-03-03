@@ -9,6 +9,9 @@
 }
 
 .nav_button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   border-radius: 50%;
   height: 32px;
   width: 32px;
@@ -16,9 +19,6 @@
   cursor: pointer;
   opacity: 0.6;
   padding: 2px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
 }
 
 .nav_button_wrapper {
