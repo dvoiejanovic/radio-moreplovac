@@ -1,8 +1,8 @@
 
 .splash {
   @include flex-center();
-  flex-direction: column;
   background-color: $splash-bg-color;
+  flex-direction: column;
   height: 100vh;
 }
 
@@ -13,11 +13,11 @@
 
 .button {
   background-color: $black;
+  border-radius: 8px;
   color: white;
+  cursor: pointer;
   font-size: 32px;
   padding: 16px;
-  border-radius: 8px;
-  cursor: pointer;
 
   &:hover {
     background-color: black;

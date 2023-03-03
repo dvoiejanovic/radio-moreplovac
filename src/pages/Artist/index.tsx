@@ -1,13 +1,15 @@
 import {useEffect, useState} from 'react';
 import {useLocation, useParams} from 'react-router-dom';
-import WorkInProgress from '~/components/WorkInProgress';
+import Card from '~/components/Card';
+import CardGrid from '~/components/CardGrid';
 import {formatNumber} from '~/helpers/format';
-import {getArtist, IArtist} from '~/services/spotify';
+import {getArtist, getArtistAlbums, IAlbum, IArtist} from '~/services/spotify';
 import styles from './styles.module.scss';
 
 const Artist = () => {
   const params = useParams();
   const [artist, setArtist] = useState<IArtist>();
+  const [albums, setAlbums] = useState<any>();
   const { pathname } = useLocation();
 
   useEffect(() => {
@@ -16,7 +18,13 @@ const Artist = () => {
         const artist = await getArtist(params.id as string);
         setArtist(artist);
       }
+      const fetchArtistAlbums = async() => {
+        const artistAlbums = await getArtistAlbums(params.id as string);
+        setAlbums(artistAlbums);
+      }
+
       fetchArtist();
+      fetchArtistAlbums();
     }
   }, [])
 
@@ -37,7 +45,26 @@ const Artist = () => {
           </div>
         </div>
       </div>
-      <WorkInProgress />
+      <div>
+        <div className={styles.discography_header}>
+          <h3 className={styles.section_title}>Discography</h3>
+          <div className={styles.show_all}>
+            Show all
+          </div>
+        </div>
+        <CardGrid>
+          {albums && albums.map((album: IAlbum) => (
+            <Card
+              key={album.id}
+              imageUrl={album.images[0].url}
+              title={album.name}
+              description={`${album.release_date}`}
+              link=""
+              borderStyle="square"
+            />
+          ))}
+        </CardGrid>
+      </div>
     </div>
   );
 }

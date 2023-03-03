@@ -10,6 +10,10 @@
 
   &:hover {
     background-color: $card-hover-bg-color;
+
+    .badge {
+      background-color: $eerie-black;
+    }
   }
 }
 
@@ -17,12 +21,20 @@
   align-self: flex-start;
   padding-left: 16px;
   justify-self: flex-end;
+  width: 100%;
 }
 
 .image {
-  height: 100px;
-  width: 100px;
-  border-radius: 50%;
+  height: 120px;
+  width: 120px;
+
+  &.round {
+    border-radius: 50%;
+  }
+
+  &.square {
+    border-radius: 8px;
+  }
 }
 
 .title {
@@ -43,4 +55,21 @@
 
 .image_wrapper {
   border-radius: 50%;
+}
+
+.footer {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  justify-content: space-between;
+}
+
+.badge {
+  font-size: 11px;
+  background-color: $genre-badge-bg-color;
+  border-radius: 4px;
+  padding: 4px;
+  color: $text-base;
+  text-transform: capitalize;
+  text-decoration: unset;
 }

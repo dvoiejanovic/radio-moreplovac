@@ -11,15 +11,25 @@ interface IAccessTokenResponse {
   scope?: string,
 }
 
+interface ISpotifyResponse<T> {
+  href: string
+  limit: number
+  next: string
+  offset: number
+  previous: string | null
+  total: number
+  items: T[]
+}
+
 export interface IUserProfile {
   display_name: string
   images: IImage[]
 }
 
 export interface ITopArtist {
+  id: string
   genres: string[]
   href: string
-  id: string
   images: IImage[]
   name: string
   popularity: number
@@ -27,8 +37,17 @@ export interface ITopArtist {
   uri: string
 }
 
-interface ITopArtistsReponse {
-  items: ITopArtist[]
+export interface IAlbum {
+  id: string
+  album_group: string
+  album_type: string
+  available_markets: string[]
+  images: IImage[]
+  name: string
+  release_date: string
+  total_tracks: number
+  type: string
+  uri: string
 }
 
 interface IImage {
@@ -44,8 +63,10 @@ export interface IArtist {
   href: string
   id: string
   images: IImage[]
+  imageUrl: string
   name: string
   popularity: string
+  topGenre: string;
   type: string
   uri: string
 }
@@ -104,13 +125,29 @@ export async function getUserProfile() {
 }
 
 export async function getUserTopArtists() {
-  const topArtists = await request<ITopArtistsReponse>('me/top/artists');
+  const topArtists = await request<ISpotifyResponse<IArtist>>('me/top/artists');
+  const artists = topArtists.items.map((item) => {
+    return {
+      ...item,
+      get imageUrl() {
+        return item.images.at(0)?.url
+      },
+      get topGenre() {
+        return item.genres.at(0);
+      }
+    }
+  })
   return topArtists.items;
 }
 
 export async function getArtist(id: string) {
   const artist = await request<IArtist>('artists', id)
   return artist;
+}
+
+export async function getArtistAlbums(id: string) {
+  const artistAlbums = await request<ISpotifyResponse<IAlbum>>('artists', `${id}/albums?include_groups=album,single`);
+  return artistAlbums.items;
 }
 
 async function request<TData>(endpoint: string, param?: string, headers?: Record<string, string>) {

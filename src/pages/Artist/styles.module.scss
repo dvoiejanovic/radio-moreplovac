@@ -1,5 +1,6 @@
 .artist_page {
   height: 100%;
+  padding: 0 16px;
 }
 
 .avatar {
@@ -8,11 +9,33 @@
   width: 200px;
 }
 
+.discography_header {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+  padding: 0 16px;
+  margin-top: 24px;
+}
+
+.section_title {
+  margin: 8px 0;
+}
+
+.show_all {
+  color: $text-subdued;
+  cursor: pointer;
+  font-size: 14px;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
 .cover {
+  align-items: center;
   display: flex;
   flex-direction: row;
   gap: 24px;
-  align-items: center;
   padding: 0 40px;
 }
 
@@ -23,6 +46,6 @@
 
 .follower_count {
   font-size: 1rem;
-  text-align: left;
   padding-left: 8px;
+  text-align: left;
 }

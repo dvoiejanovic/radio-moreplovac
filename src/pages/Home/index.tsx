@@ -2,11 +2,11 @@ import {useEffect, useState} from "react";
 import Card from "~/components/Card";
 import CardGrid from "~/components/CardGrid";
 import {formatTimeOfDay} from "~/helpers/format";
-import {getUserTopArtists, ITopArtist} from "~/services/spotify";
+import {getUserTopArtists, IArtist, ITopArtist} from "~/services/spotify";
 import styles from './styles.module.scss';
 
 const Home = () => {
-  const [topArtists, setTopArtists] = useState<ITopArtist[]>([]);
+  const [topArtists, setTopArtists] = useState<IArtist[]>([]);
   const timeOfDay = formatTimeOfDay();
 
 
@@ -23,15 +23,18 @@ const Home = () => {
       <h2 className={styles.greeting}>
         Good {timeOfDay}
       </h2>
+
       <CardGrid>
         {
           topArtists.map((artist) => (
             <Card
               key={artist.id}
+              badge={artist.genres[0]}
               title={artist.name}
               description="artist"
               imageUrl={artist.images[0].url}
               link={`artist/${artist.id}`}
+              borderStyle="round"
             />
           ))
         }
