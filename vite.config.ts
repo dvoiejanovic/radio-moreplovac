@@ -15,10 +15,10 @@ export default defineConfig({
     preprocessorOptions: {
       scss: {
         additionalData (source, fp) {
-          if (fp.endsWith('index.scss')) {
+          if (fp.endsWith('styles/styles.scss')) {
             return source;
           }
-          return `@import "~/index.scss"; ${source}`;
+          return `@import "~/styles/styles.scss"; ${source}`;
         }
       }
     }

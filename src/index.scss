@@ -1,25 +1,11 @@
-:root {
-    --snow: #fafafa;
-    --adriatic: #006994;
-    --black: #000;
-    --white: #fff;
-    --silver: #b3b3b3;
-    --eerie-black: #181818;
-    --dire-wolf: #282828;
-    --dark-tone-ink: #121212;
-
-    --text-subdued: #a7a7a7;
-    --text-base : #fff;
-}
-
 body {
     margin: 0;
-    color: var(--white);
+    color: $white;
     width: 100vw;
     height: 100vh;
     font-family: 'Signika', sans-serif;
     font-size: 22px;
-    background-color: var(--dark-tone-ink);
+    background-color: $dark-tone-ink;
 }
 
 button {
@@ -30,10 +16,3 @@ button {
 * {
     box-sizing: border-box;
 }
-
-@mixin flex-center {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
