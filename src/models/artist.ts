@@ -8,11 +8,13 @@ export interface IArtist {
   href: string
   id: string
   images: IImage[]
-  imageUrl: string
+  imageUrl?: string
   name: string
   popularity: string
-  topGenre: string;
+  topGenre?: string;
   type: string
   uri: string
 }
+
+export type IArtistResponse = Omit<IArtist, 'imageUrl' | 'topGenre'>;
 

@@ -3,10 +3,10 @@ import {Link} from "react-router-dom";
 import styles from "./styles.module.scss";
 
 interface ICardProps {
-  badge: string
+  badge?: string
   borderStyle: 'round' | 'square'
   description: string
-  imageUrl: string
+  imageUrl?: string
   link: string
   title: string
 }

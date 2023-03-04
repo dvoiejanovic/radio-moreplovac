@@ -2,7 +2,6 @@
 import {authorize} from '~/services/authorization';
 import styles from './styles.module.scss';
 
-
 function App() {
   return (
     <main className={styles.splash}>
