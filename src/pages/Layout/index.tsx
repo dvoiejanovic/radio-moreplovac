@@ -1,8 +1,9 @@
-import {ReactNode, useEffect, useState} from "react";
+import {useEffect, useState} from "react";
 import {Outlet, useNavigate} from "react-router-dom";
 import Header from "~/components/Header";
 import Sidebar from "~/components/Sidebar";
-import {getUserProfile, IUserProfile} from "~/services/spotify";
+import {IUserProfile} from "~/models/user-profile";
+import {getUserProfile} from "~/services/spotify";
 import styles from "./styles.module.scss";
 
 

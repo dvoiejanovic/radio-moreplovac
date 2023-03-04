@@ -2,7 +2,8 @@ import {useEffect, useState} from "react";
 import Card from "~/components/Card";
 import CardGrid from "~/components/CardGrid";
 import {formatTimeOfDay} from "~/helpers/format";
-import {getUserTopArtists, IArtist, ITopArtist} from "~/services/spotify";
+import {IArtist} from "~/models/artist";
+import {getUserTopArtists} from "~/services/spotify";
 import styles from './styles.module.scss';
 
 const Home = () => {
