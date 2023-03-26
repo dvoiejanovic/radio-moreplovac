@@ -1,7 +1,7 @@
 
 /* eslint-env node */
 
-// const OFF = 0;
+const OFF = 0;
 // const WARN = 1;
 const ERR = 2;
 
@@ -28,6 +28,8 @@ module.exports = {
     ],
     'rules': {
         'quotes': [ERR, 'single'],
+        'react/react-in-jsx-scope': OFF,
+        'no-console': ERR,
         '@typescript-eslint/consistent-type-imports': [
             ERR, {
             prefer: 'type-imports',
