@@ -1,7 +1,8 @@
-import type {IAlbum} from "~/models/album";
-import type {IArtist, IArtistResponse} from "~/models/artist";
-import type {ISearchResults} from "~/models/search-results";
-import type {IUserProfile} from "~/models/user-profile";
+import type {IAlbum} from '~/models/album';
+import type {IArtist, IArtistResponse} from '~/models/artist';
+import type {ISearchResults} from '~/models/search-results';
+import type {ITrack} from '~/models/track';
+import type {IUserProfile} from '~/models/user-profile';
 
 const apiBaseUrl = 'https://api.spotify.com/v1';
 
@@ -23,7 +24,7 @@ export async function getUserProfile() {
 }
 
 export async function getUserTopArtists(limit = 6, timeRange: TTimeRange = 'medium_term' ) {
-  let endpoint = `me/top/artists?limit=${limit}&time_range=${timeRange}`;
+  const endpoint = `me/top/artists?limit=${limit}&time_range=${timeRange}`;
   const topArtists = await request<ITypeResponse<IArtistResponse>>(endpoint);
   const artists: IArtist[] = topArtists.items.map((item) => {
     return {
@@ -40,9 +41,9 @@ export async function getUserTopArtists(limit = 6, timeRange: TTimeRange = 'medi
 }
 
 export async function getUserTopTracks(limit = 6, timeRange: TTimeRange = 'medium_term' ) {
-  let endpoint = `me/top/tracks?limit=${limit}&time_range=${timeRange}`;
-  const topTracks = await request<ITypeResponse<any>>(endpoint);
-  const tracks: any[] = topTracks.items.map((item) => {
+  const endpoint = `me/top/tracks?limit=${limit}&time_range=${timeRange}`;
+  const topTracks = await request<ITypeResponse<ITrack>>(endpoint);
+  const tracks: ITrack[] = topTracks.items.map((item) => {
     return {
       ...item,
       get imageUrl() {

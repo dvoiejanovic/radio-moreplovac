@@ -1,5 +1,5 @@
-import {IFollower} from "./follower"
-import {IImage} from "./image"
+import type {IFollower} from './follower'
+import type {IImage} from './image'
 
 export interface IArtist {
   external_urls: string

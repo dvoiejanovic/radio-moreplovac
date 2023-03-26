@@ -1,6 +1,7 @@
-import {useEffect, useRef, useState} from "react";
-import {groupRgbValues, quantizeColors, TPixelColor} from "~/helpers/color";
-import type {IImage} from "~/models/image";
+import {useRef, useState} from 'react';
+import {groupRgbValues, quantizeColors} from '~/helpers/color';
+import type {IImage} from '~/models/image';
+import type { TPixelColor } from '~/helpers/color';
 import styles from './styles.module.scss';
 
 interface IGradientcoverProps {
@@ -15,13 +16,13 @@ const GradientCover = (props: IGradientcoverProps) => {
   if (props.image && !gradientColor) {
     const image = new Image();
     image.src = props.image.url;
-    image.crossOrigin = "Anonymus"
-    image.addEventListener("load", () => {
+    image.crossOrigin = 'Anonymus'
+    image.addEventListener('load', () => {
       if (canvasRef?.current) {
         canvasRef.current.width = props.image.width;
         canvasRef.current.height = props.image.height;
 
-        const ctx = canvasRef.current.getContext("2d");
+        const ctx = canvasRef.current.getContext('2d');
         ctx?.drawImage(image, 0, 0, props.image.width, props.image.height)
         const imageData = ctx?.getImageData(0, 0, props.image.width, props.image.height);
 
