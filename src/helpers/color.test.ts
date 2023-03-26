@@ -1,4 +1,4 @@
-import {findWidestColorRange, groupRgbValues, quantizeColors} from "./color";
+import {findWidestColorRange, groupRgbValues, quantizeColors} from './color';
 
 const groupedRgbValues = groupRgbValues(new Uint8ClampedArray([
   255, 0, 0, 255,
@@ -18,11 +18,11 @@ test('It finds widest color range', () => {
 
 test.skip('it performs color quantization with various depths correctly', () => {
   const image = new Image();
-  image.src = "../assets/yellow.png";
-  image.crossOrigin = "Anonymus";
+  image.src = '../assets/yellow.png';
+  image.crossOrigin = 'Anonymus';
 
   const canvas = document.createElement('canvas');
-  const ctx = canvas.getContext("2d");
+  const ctx = canvas.getContext('2d');
   ctx?.drawImage(image, image.width, image.height);
   const imageData = ctx?.getImageData(0, 0, image.width, image.height).data;
 
