@@ -1,4 +1,4 @@
-import type {IImage} from './image';
+import type {IImage} from "./image";
 
 export interface IAlbum {
   id: string
