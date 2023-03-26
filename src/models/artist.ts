@@ -8,6 +8,7 @@ export interface IArtist {
   href: string
   id: string
   images: IImage[]
+  image: IImage
   imageUrl?: string
   name: string
   popularity: string

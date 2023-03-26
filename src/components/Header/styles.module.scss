@@ -2,10 +2,13 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  grid-area: top-area;
+  grid-area: main-area;
   height: 64px;
   padding: 8px 16px 0;
-  z-index: 9;
+  background-color: transparent;
+  position: relative;
+  width: 100%;
+  z-index: 10;
 }
 
 .nav_button {

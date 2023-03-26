@@ -55,7 +55,12 @@ export async function getUserTopTracks(limit = 6, timeRange: TTimeRange = 'mediu
 
 export async function getArtist(id: string) {
   const artist = await request<IArtist>('artists', id)
-  return artist;
+  return {
+    ...artist,
+    get image() {
+      return artist.images[0]
+    }
+  };
 }
 
 export async function getArtistAlbums(id: string) {

@@ -26,8 +26,6 @@ const Home = () => {
     fetchTopTracks();
   }, []);
 
-  console.log(topTracks);
-
   return (
     <div className={styles.home}>
       <h2 className={styles.greeting}>
