@@ -5,10 +5,9 @@
   grid-template-columns: auto 1fr;
   grid-template-rows: auto 1fr;
   height: 100vh;
+  position: relative;
 }
 
 .layout_body {
-  position: relative;
-  flex: 1;
-  overflow-x: auto;
+  grid-area: main-area;
 }

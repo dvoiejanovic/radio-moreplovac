@@ -1,0 +1,6 @@
+-- husky
+-- font sizes
+-- margin and padding variables
+-- go through code
+-- linter
+-- test for color quantization

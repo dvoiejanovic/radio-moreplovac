@@ -1,6 +1,6 @@
 export interface IImage {
-  height?: number
-  width?: number
+  height: number
+  width: number
   url: string
 }
 

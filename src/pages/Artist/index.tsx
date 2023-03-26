@@ -2,9 +2,12 @@ import {useEffect, useState} from 'react';
 import {useLocation, useParams} from 'react-router-dom';
 import Card from '~/components/Card';
 import CardGrid from '~/components/CardGrid';
+import GradientCover from '~/components/GradientCover';
 import {formatNumber} from '~/helpers/format';
-import {getArtist, getArtistAlbums, IAlbum, IArtist} from '~/services/spotify';
+import {getArtist, getArtistAlbums} from '~/services/spotify';
 import styles from './styles.module.scss';
+import type {IAlbum} from '~/models/album';
+import type {IArtist} from '~/models/artist';
 
 const Artist = () => {
   const params = useParams();
@@ -35,6 +38,9 @@ const Artist = () => {
   return (
     <div className={styles.artist_page}>
       <div className={styles.cover}>
+        {artist?.image &&
+          <GradientCover image={artist?.image} />
+        }
         <img className={styles.avatar} src={artist?.images[0].url} alt="" />
         <div className={styles.info}>
           <div className={styles.name}>
@@ -45,6 +51,9 @@ const Artist = () => {
           </div>
         </div>
       </div>
+
+
+
       <div>
         <div className={styles.discography_header}>
           <h3 className={styles.section_title}>Discography</h3>
