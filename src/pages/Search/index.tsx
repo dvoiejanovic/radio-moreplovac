@@ -26,7 +26,7 @@ const Search = () => {
                   key={album.id}
                   title={album.name}
                   description="album"
-                  imageUrl={album.images[0].url}
+                  imageUrl={album.images[0]?.url}
                   link={`album/${album.id}`}
                   borderStyle="round"
                 />
@@ -41,8 +41,8 @@ const Search = () => {
                   key={artist.id}
                   title={artist.name}
                   description="artist"
-                  imageUrl={artist.images[0].url}
-                  link={`artist/${artist.id}`}
+                  imageUrl={artist.images[0]?.url}
+                  link={`../artist/${artist.id}`}
                   borderStyle="round"
                 />
               ))

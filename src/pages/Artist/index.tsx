@@ -52,8 +52,6 @@ const Artist = () => {
         </div>
       </div>
 
-
-
       <div>
         <div className={styles.discography_header}>
           <h3 className={styles.section_title}>Discography</h3>

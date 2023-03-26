@@ -20,7 +20,7 @@ export const Card = ({
   title
 }: ICardProps) => {
   return (
-    <Link to={link} relative="path">
+    <Link to={link}>
       <div className={styles.card}>
         <div className={styles.image_wrapper}>
           <img src={imageUrl} alt="" className={`${styles.image} ${styles[borderStyle]}`}/>

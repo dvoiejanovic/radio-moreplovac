@@ -56,6 +56,7 @@ const Home = () => {
       <h3 className={styles.section_title}>
         Your favorite tracks
       </h3>
+
       <CardGrid>
         {
           topTracks.map((track) => (

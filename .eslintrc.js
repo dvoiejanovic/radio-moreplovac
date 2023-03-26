@@ -30,6 +30,7 @@ module.exports = {
         'quotes': [ERR, 'single'],
         'react/react-in-jsx-scope': OFF,
         'no-console': ERR,
+        'no-multi-spaces': ERR,
         '@typescript-eslint/consistent-type-imports': [
             ERR, {
             prefer: 'type-imports',

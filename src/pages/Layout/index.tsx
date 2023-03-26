@@ -30,7 +30,9 @@ const Layout = () => {
   return (
     <div className={styles.layout}>
       <Header userProfile={userProfile} />
+
       <Sidebar />
+
       <main className={styles.layout_body}>
         <Outlet />
       </main>
