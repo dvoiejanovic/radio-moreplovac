@@ -1,8 +1,8 @@
 import styles from './styles.module.scss';
-import { AiOutlineHome } from "react-icons/ai";
-import { AiOutlineSearch } from "react-icons/ai";
+import { AiOutlineHome } from 'react-icons/ai';
+import { AiOutlineSearch } from 'react-icons/ai';
 import {useNavigate} from 'react-router-dom';
-import {GiPaperBoat} from "react-icons/gi";
+import {GiPaperBoat} from 'react-icons/gi';
 
 const Sidebar = () => {
   const navigate = useNavigate();

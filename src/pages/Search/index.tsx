@@ -2,9 +2,10 @@
 import {useState} from 'react';
 import Card from '~/components/Card';
 import CardGrid from '~/components/CardGrid';
-import {ISearchResults} from '~/models/search-results';
 import {getSearchResults} from '~/services/spotify';
 import styles from './styles.module.scss';
+
+import type {ISearchResults} from '~/models/search-results';
 
 const Search = () => {
   const [searchResults, setSearchResults] = useState<ISearchResults>();

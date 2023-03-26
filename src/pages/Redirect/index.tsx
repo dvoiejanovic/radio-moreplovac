@@ -1,8 +1,8 @@
 
-import {useEffect} from "react";
-import {AiOutlineLoading3Quarters} from "react-icons/ai";
-import {useNavigate} from "react-router-dom";
-import {requestAccessToken} from "~/services/authorization";
+import {useEffect} from 'react';
+import {AiOutlineLoading3Quarters} from 'react-icons/ai';
+import {useNavigate} from 'react-router-dom';
+import {requestAccessToken} from '~/services/authorization';
 import styles from './styles.module.scss';
 
 const Redirect = () => {

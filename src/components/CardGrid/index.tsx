@@ -1,5 +1,5 @@
-import {ReactNode} from 'react';
 import styles from './styles.module.scss';
+import type {ReactNode} from 'react';
 
 interface ICardGridProps {
   children: ReactNode

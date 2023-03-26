@@ -12,7 +12,7 @@ import type {IArtist} from '~/models/artist';
 const Artist = () => {
   const params = useParams();
   const [artist, setArtist] = useState<IArtist>();
-  const [albums, setAlbums] = useState<any>();
+  const [albums, setAlbums] = useState<IAlbum>();
   const { pathname } = useLocation();
 
   useEffect(() => {

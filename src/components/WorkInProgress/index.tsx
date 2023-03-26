@@ -1,4 +1,4 @@
-import {AiTwotoneTool} from "react-icons/ai";
+import {AiTwotoneTool} from 'react-icons/ai';
 import styles from './styles.module.scss';
 
 const WorkInProgress = () => {

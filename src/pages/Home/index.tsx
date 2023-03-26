@@ -1,14 +1,16 @@
-import {useEffect, useState} from "react";
-import Card from "~/components/Card";
-import CardGrid from "~/components/CardGrid";
-import {formatTimeOfDay} from "~/helpers/format";
-import {IArtist} from "~/models/artist";
-import {getUserTopArtists, getUserTopTracks} from "~/services/spotify";
+import {useEffect, useState} from 'react';
+import Card from '~/components/Card';
+import CardGrid from '~/components/CardGrid';
+import {formatTimeOfDay} from '~/helpers/format';
+import {getUserTopArtists, getUserTopTracks} from '~/services/spotify';
 import styles from './styles.module.scss';
+
+import type {IArtist} from '~/models/artist';
+import type {ITrack} from '~/models/track';
 
 const Home = () => {
   const [topArtists, setTopArtists] = useState<IArtist[]>([]);
-  const [topTracks, setTopTracks] = useState<any[]>([]);
+  const [topTracks, setTopTracks] = useState<ITrack[]>([]);
   const timeOfDay = formatTimeOfDay();
 
 

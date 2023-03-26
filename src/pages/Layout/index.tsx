@@ -1,10 +1,10 @@
-import {useEffect, useState} from "react";
-import {Outlet, useNavigate} from "react-router-dom";
-import Header from "~/components/Header";
-import Sidebar from "~/components/Sidebar";
-import {IUserProfile} from "~/models/user-profile";
-import {getUserProfile} from "~/services/spotify";
-import styles from "./styles.module.scss";
+import {useEffect, useState} from 'react';
+import {Outlet, useNavigate} from 'react-router-dom';
+import Header from '~/components/Header';
+import Sidebar from '~/components/Sidebar';
+import type {IUserProfile} from '~/models/user-profile';
+import {getUserProfile} from '~/services/spotify';
+import styles from './styles.module.scss';
 
 
 const Layout = () => {
