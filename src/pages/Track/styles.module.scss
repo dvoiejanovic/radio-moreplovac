@@ -1,0 +1,44 @@
+.track {
+  padding-top: 64px;
+}
+
+.cover {
+  padding: 40px;
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+.image {
+  box-shadow: 0 4px 60px rgba(0,0,0,.5);
+  height: 200px;
+  width: 200px;
+}
+
+.title {
+  font-size: 6rem;
+  font-weight: bolder;
+}
+
+.info {
+  display: flex;
+  flex-direction: column;
+}
+
+.type {
+  font-size: 0.875rem;
+  text-transform: capitalize;
+}
+
+.artist_info {
+  display: flex;
+  gap: 8px;
+  font-size: 1rem;
+  align-items: center;
+}
+
+.artist_avatar {
+  height: 24px;
+  width: 24px;
+  border-radius: 50%;
+}

@@ -1,3 +1,4 @@
+import {Track} from '~/helpers/normalize';
 import type {IAlbum} from '~/models/album';
 import type {IArtist, IArtistResponse} from '~/models/artist';
 import type {ISearchResults} from '~/models/search-results';
@@ -43,15 +44,18 @@ export async function getUserTopArtists(limit = 6, timeRange: TTimeRange = 'medi
 export async function getUserTopTracks(limit = 6, timeRange: TTimeRange = 'medium_term' ) {
   const endpoint = `me/top/tracks?limit=${limit}&time_range=${timeRange}`;
   const topTracks = await request<ITypeResponse<ITrack>>(endpoint);
-  const tracks: ITrack[] = topTracks.items.map((item) => {
-    return {
-      ...item,
-      get imageUrl() {
-        return item.album.images?.at(0)?.url
-      }
-    }
-  })
+  const tracks: Track[] = topTracks.items.map((item) => {
+    return new Track(item);
+  });
+
   return tracks;
+}
+
+export async function getTrack(id: string) {
+  const endpoint = `tracks/${id}`;
+  const track = await request<ITrack>(endpoint);
+
+  return new Track(track);
 }
 
 export async function getArtist(id: string) {

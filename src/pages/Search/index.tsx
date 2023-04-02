@@ -14,20 +14,24 @@ const Search = () => {
     setSearchResults(results);
   }
 
+  const albums = searchResults?.albums?.items ?? [];
+  const artists = searchResults?.artists?.items ?? [];
+
   return (
     <div className={styles.search}>
       <input className={styles.search_input} type="text" onInput={performSearch} />
+
       {searchResults &&
         <>
           <CardGrid>
             {
-              searchResults.albums.items.map((album) => (
+              artists.map((artist) => (
                 <Card
-                  key={album.id}
-                  title={album.name}
-                  description="album"
-                  imageUrl={album.images[0]?.url}
-                  link={`album/${album.id}`}
+                  key={artist.id}
+                  title={artist.name}
+                  description="artist"
+                  imageUrl={artist.images[0]?.url}
+                  link={`../artist/${artist.id}`}
                   borderStyle="round"
                 />
               ))
@@ -36,13 +40,13 @@ const Search = () => {
 
           <CardGrid>
             {
-              searchResults.artists.items.map((artist) => (
+              albums.map((album) => (
                 <Card
-                  key={artist.id}
-                  title={artist.name}
-                  description="artist"
-                  imageUrl={artist.images[0]?.url}
-                  link={`../artist/${artist.id}`}
+                  key={album.id}
+                  title={album.name}
+                  description="album"
+                  imageUrl={album.images[0]?.url}
+                  link={`album/${album.id}`}
                   borderStyle="round"
                 />
               ))

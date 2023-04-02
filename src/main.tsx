@@ -11,6 +11,7 @@ import Redirect from './pages/Redirect';
 import Search from './pages/Search';
 import Settings from './pages/Settings';
 import Splash from './pages/Splash';
+import Track from './pages/Track';
 
 const router = createBrowserRouter([
   {
@@ -28,6 +29,9 @@ const router = createBrowserRouter([
       }, {
         path: '/artist/:id',
         element: <Artist />
+      }, {
+        path: '/track/:id',
+        element: <Track />
       }, {
         path: '/',
         element: <Home />
