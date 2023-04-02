@@ -1,0 +1,12 @@
+.button {
+  @include flex-center();
+  height: 56px;
+  width: 56px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.icon {
+  font-size: 4rem;
+  color: $play-button-bg-color;
+}

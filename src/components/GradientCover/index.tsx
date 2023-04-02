@@ -1,6 +1,6 @@
 import {useRef, useState} from 'react';
 import {groupRgbValues, quantizeColors} from '~/helpers/color';
-import type {IImage} from '~/models/image';
+import type {IImage} from '~/interfaces/image';
 import type { TPixelColor } from '~/helpers/color';
 import styles from './styles.module.scss';
 

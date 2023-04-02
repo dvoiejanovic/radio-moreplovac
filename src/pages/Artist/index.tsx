@@ -6,8 +6,8 @@ import GradientCover from '~/components/GradientCover';
 import {formatNumber} from '~/helpers/format';
 import {getArtist, getArtistAlbums} from '~/services/spotify';
 import styles from './styles.module.scss';
-import type {IAlbum} from '~/models/album';
-import type {IArtist} from '~/models/artist';
+import type {IAlbum} from '~/interfaces/album';
+import type {IArtist} from '~/interfaces/artist';
 
 const Artist = () => {
   const params = useParams();
@@ -50,6 +50,11 @@ const Artist = () => {
             {formatNumber(artist?.followers.total as number)} followers
           </div>
         </div>
+      </div>
+
+      <div>
+        <h3>Popular</h3>
+
       </div>
 
       <div>

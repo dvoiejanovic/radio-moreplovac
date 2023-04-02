@@ -5,8 +5,8 @@ import {formatTimeOfDay} from '~/helpers/format';
 import {getUserTopArtists, getUserTopTracks} from '~/services/spotify';
 import styles from './styles.module.scss';
 
-import type {IArtist} from '~/models/artist';
-import type {ITrack} from '~/models/track';
+import type {IArtist} from '~/interfaces/artist';
+import type {ITrack} from '~/interfaces/track';
 
 const Home = () => {
   const [topArtists, setTopArtists] = useState<IArtist[]>([]);

@@ -9,6 +9,10 @@
   gap: 24px;
 }
 
+.play_container {
+  padding: 16px 40px;
+}
+
 .image {
   box-shadow: 0 4px 60px rgba(0,0,0,.5);
   height: 200px;
@@ -41,4 +45,29 @@
   height: 24px;
   width: 24px;
   border-radius: 50%;
+}
+
+.artist_bar {
+  cursor: pointer;
+}
+
+.artist_bar_avatar {
+  height: 80px;
+  width: 80px;
+  border-radius: 50%;
+}
+
+.artist_bar_info {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  margin-left: 40px;
+  margin-right: 40px;
+  padding: 16px;
+  gap: 24px;
+  border-radius: 8px;
+
+  &:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+  }
 }

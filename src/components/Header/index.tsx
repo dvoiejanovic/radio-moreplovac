@@ -2,7 +2,7 @@ import styles from './styles.module.scss';
 import UserBadge from '~/components/UserBadge';
 import {AiOutlineLeft, AiOutlineRight} from 'react-icons/ai';
 import {useNavigate} from 'react-router-dom';
-import type {IUserProfile} from '~/models/user-profile';
+import type {IUserProfile} from '~/interfaces/user-profile';
 
 interface IHeaderProps {
   userProfile?: IUserProfile

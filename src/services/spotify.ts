@@ -1,9 +1,10 @@
-import {Track} from '~/helpers/normalize';
-import type {IAlbum} from '~/models/album';
-import type {IArtist, IArtistResponse} from '~/models/artist';
-import type {ISearchResults} from '~/models/search-results';
-import type {ITrack} from '~/models/track';
-import type {IUserProfile} from '~/models/user-profile';
+import type {IAlbum} from '~/interfaces/album';
+import type {IArtist, IArtistResponse} from '~/interfaces/artist';
+import type {ISearchResults} from '~/interfaces/search-results';
+import type {ITrack} from '~/interfaces/track';
+import type {IUserProfile} from '~/interfaces/user-profile';
+import {Album} from '~/models/album';
+import {Track} from '~/models/track';
 
 const apiBaseUrl = 'https://api.spotify.com/v1';
 
@@ -56,6 +57,13 @@ export async function getTrack(id: string) {
   const track = await request<ITrack>(endpoint);
 
   return new Track(track);
+}
+
+export async function getAlbum(id: string) {
+  const endpoint = `albums/${id}`;
+  const album = await request<IAlbum>(endpoint);
+
+  return new Album(album);
 }
 
 export async function getArtist(id: string) {

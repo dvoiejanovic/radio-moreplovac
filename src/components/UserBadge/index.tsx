@@ -2,7 +2,7 @@ import styles from './styles.module.scss';
 import {AiFillCaretDown, AiFillCaretUp} from 'react-icons/ai';
 import {useEffect, useRef, useState} from 'react';
 import {useNavigate} from 'react-router-dom';
-import type {IUserProfile} from '~/models/user-profile';
+import type {IUserProfile} from '~/interfaces/user-profile';
 
 interface IUserBadgeProps {
   userProfile?: IUserProfile

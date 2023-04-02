@@ -1,13 +1,46 @@
+import type {ITrack} from '~/interfaces/track';
+import {formatYear} from '~/helpers/date';
 
-import type {IAlbum} from './album'
-import type {IArtist} from './artist'
+export class Track {
+  track: ITrack;
 
-export interface ITrack {
-  id: string
-  name: string
-  type: string
-  album: IAlbum
-  duration_ms: number
-  artists: IArtist[]
+  constructor(track: ITrack) {
+    this.track = track;
+  }
+
+  get id() {
+    return this.track.id;
+  }
+
+  get name() {
+    return this.track?.name;
+  }
+
+  get image() {
+    return this.album.images?.[0];
+  }
+
+  get releaseYear() {
+    return formatYear(this.album?.release_date);
+  }
+
+  get album() {
+    return this.track?.album;
+  }
+
+  get imageUrl() {
+    return this.image?.url;
+  }
+
+  get mainArtist() {
+    return this.track?.artists?.[0];
+  }
+
+  get type() {
+    return this.track?.type;
+  }
+
+  get duration() {
+    return this.track?.duration_ms;
+  }
 }
-

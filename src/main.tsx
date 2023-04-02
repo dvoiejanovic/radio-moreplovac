@@ -4,6 +4,7 @@ import {
   RouterProvider
 } from 'react-router-dom';
 import './index.scss';
+import Album from './pages/Album';
 import Artist from './pages/Artist';
 import Home from './pages/Home';
 import Layout from './pages/Layout';
@@ -29,6 +30,9 @@ const router = createBrowserRouter([
       }, {
         path: '/artist/:id',
         element: <Artist />
+      }, {
+        path: '/album/:id',
+        element: <Album />
       }, {
         path: '/track/:id',
         element: <Track />
