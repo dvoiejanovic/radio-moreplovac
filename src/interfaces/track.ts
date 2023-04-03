@@ -9,5 +9,6 @@ export interface ITrack {
   album: IAlbum
   duration_ms: number
   artists: IArtist[]
+  genres: string[]
 }
 

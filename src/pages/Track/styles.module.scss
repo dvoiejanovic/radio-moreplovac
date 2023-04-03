@@ -1,16 +1,17 @@
 .track {
   padding-top: 64px;
+  padding-left: 40px;
 }
 
 .cover {
-  padding: 40px;
   display: flex;
   align-items: center;
   gap: 24px;
+  position: relative;
 }
 
 .play_container {
-  padding: 16px 40px;
+  padding: 16px;
 }
 
 .image {
@@ -61,13 +62,28 @@
   display: flex;
   align-items: center;
   justify-content: flex-start;
-  margin-left: 40px;
-  margin-right: 40px;
   padding: 16px;
+  margin-right: 40px;
+  margin-bottom: 24px;
   gap: 24px;
   border-radius: 8px;
 
   &:hover {
     background-color: rgba(255, 255, 255, 0.1);
   }
+}
+
+.subheading {
+  font-size: 0.875rem;
+  color: $text-subdued;
+}
+
+.artist-name {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 16px;
+}
+
+.tracks_container {
+  margin: 24px 0;
 }

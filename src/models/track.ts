@@ -40,6 +40,10 @@ export class Track {
     return this.track?.type;
   }
 
+  get genre() {
+    return this.track.genres?.[0];
+  }
+
   get duration() {
     return this.track?.duration_ms;
   }

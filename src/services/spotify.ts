@@ -76,6 +76,11 @@ export async function getArtist(id: string) {
   };
 }
 
+export async function getArtistTopTracks(id: string) {
+  const tracksResponse = await request<{tracks: ITrack[]}>(`artists/${id}/top-tracks?market=US`,);
+  return tracksResponse.tracks.map((track) => new Track(track));
+}
+
 export async function getArtistAlbums(id: string) {
   const artistAlbums = await request<ITypeResponse<IAlbum>>('artists', `${id}/albums?include_groups=album,single`);
   return artistAlbums.items;
