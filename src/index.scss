@@ -11,11 +11,26 @@ body {
   background-color: transparent;
 }
 
-button,
+button
+ {
+  background: none;
+  color: inherit;
+  border: none;
+  padding: 0;
+  font: inherit;
+  cursor: pointer;
+  outline: inherit;
+}
+
 a {
   all: unset;
 }
 
 * {
   box-sizing: border-box;
+}
+
+.section-title {
+  @include heading-text();
+  padding-left: 16px;
 }

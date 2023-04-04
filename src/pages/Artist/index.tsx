@@ -54,7 +54,7 @@ const Artist = () => {
       </div>
 
       <div>
-        <h3>Popular</h3>
+        <div className="section-title">Popular</div>
       </div>
 
       <div>

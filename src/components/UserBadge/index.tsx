@@ -68,6 +68,7 @@ const UserBadge = (props: IUserBadgeProps) => {
           >
             Settings
           </button>
+
           <button
             className={styles.menu_button}
             type="button"
