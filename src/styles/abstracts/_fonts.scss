@@ -1,0 +1,18 @@
+@mixin text-style($style-name, $font-size, $line-height, $font-weight: 400, $text-transform: none) {
+  font-size: $font-size;
+  line-height: $line-height;
+  font-weight: $font-weight;
+  text-transform: $text-transform;
+}
+
+@mixin caption-text {
+  @include text-style('caption', 0.875rem, 1.6, 400, none);
+}
+
+@mixin body-text {
+  @include text-style('body', 1rem, 1.6, 400, none);
+}
+
+@mixin title-text {
+  @include text-style('title', 1.5rem, 1.6, 400, none);
+}

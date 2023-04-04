@@ -38,7 +38,7 @@
 }
 
 .title {
-  font-size: 1rem;
+  @include body-text();
   color: $text-base;
   margin-bottom: 8px;
   text-overflow: ellipsis;
@@ -48,7 +48,7 @@
 }
 
 .description {
-  font-size: 0.875rem;
+  @include caption-text();
   text-transform: capitalize;
   color: $text-subdued;
 }

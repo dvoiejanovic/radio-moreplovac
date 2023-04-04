@@ -31,14 +31,14 @@
 }
 
 .type {
-  font-size: 0.875rem;
+  @include caption-text();
   text-transform: capitalize;
 }
 
 .artist_info {
   display: flex;
   gap: 8px;
-  font-size: 1rem;
+  @include body-text();
   align-items: center;
 }
 
@@ -74,12 +74,12 @@
 }
 
 .subheading {
-  font-size: 0.875rem;
+  @include caption-text();
   color: $text-subdued;
 }
 
 .artist-name {
-  font-size: 1.5rem;
+  @include title-text();
   font-weight: 700;
   margin-bottom: 16px;
 }

@@ -8,7 +8,7 @@
 }
 
 .section_title {
-  font-size: 1.5rem;
+  @include title-text();
   padding: 16px;
   margin: 8px;
 }

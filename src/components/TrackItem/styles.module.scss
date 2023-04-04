@@ -24,12 +24,12 @@
 .index {
   grid-column: index;
   color: $text-subdued;
-  font-size: 0.875rem;
+  @include caption-text();
 }
 
 .name {
   grid-column: first;
-  font-size: 1rem;
+  @include body-text();
 }
 
 .image {
@@ -41,5 +41,5 @@
 .track_duration {
   grid-column: last;
   color: $text-subdued;
-  font-size: 1rem;
+  @include body-text();
 }

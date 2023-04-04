@@ -1,22 +1,21 @@
 html {
-    background-color: $html-bg-color;
+  background-color: $html-bg-color;
 }
 
 body {
-    margin: 0;
-    color: $text-base;
-    width: 100vw;
-    height: 100vh;
-    font-family: 'Signika', sans-serif;
-    font-size: 22px;
-    background-color: transparent;
+  margin: 0;
+  color: $text-base;
+  width: 100vw;
+  height: 100vh;
+  font-family: 'Signika', sans-serif;
+  background-color: transparent;
 }
 
 button,
 a {
-    all: unset;
+  all: unset;
 }
 
 * {
-    box-sizing: border-box;
+  box-sizing: border-box;
 }

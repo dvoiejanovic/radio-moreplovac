@@ -6,6 +6,7 @@ import GradientCover from '~/components/GradientCover';
 import {formatNumber} from '~/helpers/format';
 import {getArtist, getArtistAlbums} from '~/services/spotify';
 import styles from './styles.module.scss';
+
 import type {IAlbum} from '~/interfaces/album';
 import type {IArtist} from '~/interfaces/artist';
 
@@ -54,7 +55,6 @@ const Artist = () => {
 
       <div>
         <h3>Popular</h3>
-
       </div>
 
       <div>
@@ -71,7 +71,7 @@ const Artist = () => {
               imageUrl={album.images[0].url}
               title={album.name}
               description={`${album.release_date}`}
-              link=""
+              link={`/album/${album.id}`}
               borderStyle="square"
             />
           ))}
