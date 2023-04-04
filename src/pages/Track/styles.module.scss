@@ -59,14 +59,14 @@
 }
 
 .artist_bar_info {
-  display: flex;
   align-items: center;
+  border-radius: 8px;
+  display: flex;
+  gap: 24px;
   justify-content: flex-start;
-  padding: 16px;
   margin-right: 40px;
   margin-bottom: 24px;
-  gap: 24px;
-  border-radius: 8px;
+  padding: 16px;
 
   &:hover {
     background-color: rgba(255, 255, 255, 0.1);
