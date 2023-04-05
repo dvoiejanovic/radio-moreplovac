@@ -1,14 +1,12 @@
 .home {
-  padding-top: 64px;
+  padding: 64px 32px 24px;
 }
 
 .greeting {
   font-size: 2rem;
-  padding-left: 16px;
 }
 
 .section_title {
   @include title-text();
-  padding: 16px;
   margin: 8px;
 }
